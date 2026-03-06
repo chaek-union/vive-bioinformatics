@@ -1,6 +1,10 @@
 # Summary
 
 * [소개](README.md)
+* [서론](chapters/introduction.md)
+
+## 파트 I. 개발 기초 도구
+
 * [1장. 개발 환경 구성](chapters/chapter1.md)
 * [2장. Git & Github](chapters/chapter2.md)
 * [3장. Docker](chapters/chapter3.md)
