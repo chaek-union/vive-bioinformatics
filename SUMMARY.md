@@ -16,3 +16,10 @@
 * [7장. 프로젝트 디렉토리 설정](chapters/chapter7.md)
 * [8장. 랜딩 페이지 디자인](chapters/chapter8.md)
 * [9장. 일반 페이지 디자인](chapters/chapter9.md)
+* [10장. BLAST 검색 도구 만들기](chapters/chapter10.md)
+
+## 파트 IV. AI Co-scientist 만들기
+
+* [11장. MCP와 Claude for Life Sciences](chapters/chapter11.md)
+* [12장. Co-scientist 에이전트 설계](chapters/chapter12.md)
+* [13장. AI로 논문 작성하기](chapters/chapter13.md)

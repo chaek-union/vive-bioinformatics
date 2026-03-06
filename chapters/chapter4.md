@@ -227,7 +227,7 @@ adjusted_pvalues = false_discovery_control(p_values, method='bh')
 
 이 요청에서 **t-test가 무엇인지**, **다중 검정 보정이 왜 필요한지**를 이해하고 있어야 AI의 결과를 올바르게 해석할 수 있다.
 
-## 4.8 바이브 코딩 실전: AI와 함께하는 데이터 분석
+## 4.8 AI와 함께하는 데이터 분석
 
 ### 워크플로우
 

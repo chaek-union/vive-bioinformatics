@@ -101,7 +101,7 @@ atac = mdata.mod["atac"]  # ATAC 데이터 (AnnData)
 
 단일세포 분석은 보통 다음 순서로 진행된다:
 
-### 1단계: 품질 관리 (Quality Control)
+### 품질 관리
 
 ```python
 # 미토콘드리아 유전자 비율 계산
@@ -120,7 +120,7 @@ adata = adata[adata.obs["n_genes_by_counts"] > 200]
 adata = adata[adata.obs["pct_counts_mt"] < 20]
 ```
 
-### 2단계: 정규화 및 전처리
+### 정규화 및 전처리
 
 ```python
 # 정규화
@@ -132,7 +132,7 @@ sc.pp.highly_variable_genes(adata, n_top_genes=2000)
 sc.pl.highly_variable_genes(adata)
 ```
 
-### 3단계: 차원 축소
+### 차원 축소
 
 ```python
 # PCA
@@ -144,7 +144,7 @@ sc.pp.neighbors(adata, n_pcs=30)
 sc.tl.umap(adata)
 ```
 
-### 4단계: 클러스터링
+### 클러스터링
 
 ```python
 # Leiden 클러스터링
@@ -156,7 +156,7 @@ sc.pl.umap(adata, color="leiden")
 
 ![UMAP 플롯](../assets/ch5-04-umap-clusters.png)
 
-### 5단계: 세포 유형 주석
+### 세포 유형 주석
 
 ```python
 # 클러스터별 마커 유전자 확인
@@ -169,7 +169,7 @@ sc.pl.umap(adata, color=["CD3E", "CD14", "MS4A1", "NKG7"])
 
 ![마커 유전자별 UMAP 플롯](../assets/ch5-05-umap-marker-genes.png)
 
-### 6단계: 결과 저장
+### 결과 저장
 
 ```python
 # h5ad 파일로 저장

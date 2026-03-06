@@ -75,7 +75,7 @@ Home > Tools > Reverse Complement
 
 ## 9.4 일반 페이지 디자인 패턴
 
-### 패턴 1: 단일 도구 페이지
+### 단일 도구 페이지
 
 하나의 도구만 제공하는 간단한 페이지이다. 입력 → 실행 → 결과의 흐름을 하나의 페이지에서 처리한다.
 
@@ -104,7 +104,7 @@ Home > Tools > Reverse Complement
 
 ![단일 도구 페이지 예시](../assets/ch9-05-single-tool-page.png)
 
-### 패턴 2: 다중 도구 페이지 (Sidebar 활용)
+### 다중 도구 페이지
 
 여러 도구를 제공하는 경우, Sidebar로 도구를 선택하고 우측에서 사용하는 구조이다.
 
@@ -127,7 +127,7 @@ Home > Tools > Reverse Complement
 
 ![다중 도구 사이드바](../assets/ch9-06-multi-tool-sidebar.png)
 
-### 패턴 3: 탭 기반 결과 표시
+### 탭 기반 결과 표시
 
 분석 결과를 여러 형태로 보여줘야 할 때, Tab 컴포넌트를 활용한다.
 
@@ -154,7 +154,7 @@ src/routes/
         └── +page.svelte       → /tools/alignment
 ```
 
-### 도구 페이지 예시: Reverse Complement
+### Reverse Complement 예시
 
 ```svelte
 <!-- src/routes/tools/revcomp/+page.svelte -->
