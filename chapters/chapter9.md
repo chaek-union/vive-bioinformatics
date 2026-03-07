@@ -266,22 +266,13 @@ src/routes/
 
 **프롬프트 예시:**
 
-```
-Reverse Complement 도구 페이지를 디자인해줘.
-상단에 Breadcrumb (Home > Tools > Reverse Complement)과 페이지 제목.
-입력 영역에는 FASTA 시퀀스를 붙여넣을 수 있는 큰 Textarea와 "분석 시작" Button.
-결과 영역에는 Code Block으로 결과 시퀀스를 표시하고, "복사" 버튼과 "다운로드" 버튼.
-전체적으로 깔끔하고 과학적인 느낌의 디자인.
-```
+> Reverse Complement 도구 페이지를 디자인해줘. 상단에 Breadcrumb (Home > Tools > Reverse Complement)과 페이지 제목. 입력 영역에는 FASTA 시퀀스를 붙여넣을 수 있는 큰 Textarea와 "분석 시작" Button. 결과 영역에는 Code Block으로 결과 시퀀스를 표시하고, "복사" 버튼과 "다운로드" 버튼. 전체적으로 깔끔하고 과학적인 느낌의 디자인.
 
 이 프롬프트에는 Breadcrumb, Textarea, Button, Code Block이라는 컴포넌트 이름이 명시되어 있다. AI는 이 이름들을 정확하게 해석하여 원하는 UI를 생성해 준다.
 
 Claude Code에서는 디자인 목업 이미지를 참조하여 구현을 요청할 수 있다:
 
-```text
-> 이 디자인 목업을 참고하여 /tools/revcomp 페이지를 구현해줘.
-> SvelteKit + Tailwind CSS를 사용하고, 입력/결과 영역을 Card 컴포넌트로 감싸줘.
-```
+> 이 디자인 목업을 참고하여 /tools/revcomp 페이지를 구현해줘. SvelteKit + Tailwind CSS를 사용하고, 입력/결과 영역을 Card 컴포넌트로 감싸줘.
 
 ![Claude 일반 페이지 디자인 요청](../assets/ch9-08-claude-general-request.png)
 

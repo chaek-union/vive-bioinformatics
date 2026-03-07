@@ -38,12 +38,7 @@
 
 Snakemake도 Docker 환경에서 실행하는 것이 재현성 면에서 유리하다. Claude Code에게 다음과 같이 요청한다:
 
-```text
-> Snakemake 파이프라인 실행용 Docker 환경을 만들어줘.
-> snakemake와 함께 conda/mamba를 포함해서,
-> 각 rule에서 독립적인 Conda 환경을 사용할 수 있게 해줘.
-> compose.yml과 Dockerfile을 만들어줘.
-```
+> Snakemake 파이프라인 실행용 Docker 환경을 만들어줘. snakemake와 함께 conda/mamba를 포함해서, 각 rule에서 독립적인 Conda 환경을 사용할 수 있게 해줘. compose.yml과 Dockerfile을 만들어줘.
 
 > **참고**: 복잡한 생명정보학 파이프라인에서는 Conda와 함께 사용하는 것이 일반적이다. 각 rule에 독립적인 Conda 환경을 지정할 수 있어, STAR는 STAR의 환경에서, DESeq2는 R의 환경에서 실행하는 것이 가능하다. 이렇게 하면 서로 다른 도구의 의존성이 충돌하는 문제를 피할 수 있다.
 

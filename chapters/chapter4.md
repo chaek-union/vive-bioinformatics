@@ -12,12 +12,7 @@
 
 3장에서 배운 Docker를 활용하여 분석 환경을 구성한다. Claude Code에게 다음과 같이 요청한다:
 
-```text
-> Python 데이터 분석용 Docker 환경을 만들어줘.
-> pandas, numpy, matplotlib, seaborn, scipy를 포함하고,
-> Jupyter Notebook도 사용할 수 있게 해줘.
-> compose.yml과 Dockerfile을 만들어줘.
-```
+> Python 데이터 분석용 Docker 환경을 만들어줘. pandas, numpy, matplotlib, seaborn, scipy를 포함하고, Jupyter Notebook도 사용할 수 있게 해줘. compose.yml과 Dockerfile을 만들어줘.
 
 Claude Code가 Dockerfile과 compose.yml을 생성하여, 필요한 패키지가 모두 설치된 컨테이너 환경을 구성해 준다. Docker를 사용하면 "내 컴퓨터에서는 되는데 다른 컴퓨터에서는 안 된다"는 문제를 방지할 수 있다.
 
