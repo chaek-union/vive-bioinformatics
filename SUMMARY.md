@@ -17,7 +17,7 @@
 
 ## 파트 III. 생명정보 웹 툴 만들기
 
-* [7장. 프로젝트 디렉토리 설정](chapters/chapter7.md)
+* [7장. 생명정보 웹 툴 제작 기초](chapters/chapter7.md)
 * [8장. 랜딩 페이지 디자인](chapters/chapter8.md)
 * [9장. 일반 페이지 디자인](chapters/chapter9.md)
 * [10장. BLAST 검색 도구 만들기](chapters/chapter10.md)
