@@ -229,14 +229,13 @@ Hypothesis Generator가 제안하는 가설의 예:
 
 채택된 가설을 검증하기 위한 분석을 수행한다. Phase 2와 마찬가지로, 하나의 프롬프트에 두 에이전트를 호출하여 병렬로 실행한다.
 
-> @data-analyst 가설 1을 검증해줘. 클러스터 7 (exhausted CD8+ T세포)의 비율을 반응군과 비반응군 간에 비교하는 통계 분석을 수행해줘. Wilcoxon rank-sum test를 사용하고, violin plot과 box plot을 그려줘. 가설 3도 검증해줘. 대식세포 클러스터(4, 9, 15)에 대해 pseudotime 분석 (diffusion pseudotime)을 수행하고, M1/M2 마커 유전자의 발현 변화를 pseudotime에 따라 시각화해줘. 동시에 @pathway-analyst 는 exhausted CD8+ T세포 (클러스터 7)에서 높게 발현되는 유전자 목록으로 GO enrichment 분석을 수행해줘. 대식세포 전환 경로에서 단계별로 활성화되는 KEGG pathway도 분석해줘. 결과를 results/pathway-analysis.md에 정리해줘.
+> @data-analyst 채택된 가설을 검증해줘. CLAUDE.md의 핵심 가설 섹션을 참고해서 통계 분석과 시각화를 수행해줘. 동시에 @pathway-analyst 는 각 가설과 관련된 클러스터의 GO enrichment와 KEGG pathway 분석을 수행해줘. 결과를 results/pathway-analysis.md에 정리해줘.
 
 Stop Hook에 의해 각 분석이 완료될 때마다 Discord에 알림이 전송된다:
 
 ```
-🔬 [Data Analyst] 가설 1 검증 — exhausted CD8+ T세포 비율: 반응군 12.3% vs 비반응군 4.1% (p=0.003)
-🔬 [Data Analyst] 가설 3 검증 — pseudotime 분석 완료, M1→M2 전환 중간 상태 3개 확인
-🧬 [Pathway Analyst] GO enrichment 완료 — T cell exhaustion 관련 term 유의 (FDR < 0.001)
+🔬 [Data Analyst] 가설 검증 완료 — 통계 분석 및 시각화 저장
+🧬 [Pathway Analyst] GO/KEGG enrichment 완료 — results/pathway-analysis.md 저장
 ```
 
 ### Phase 5: 결과 종합 및 논문 작성
