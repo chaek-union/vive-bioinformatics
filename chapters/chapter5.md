@@ -75,6 +75,10 @@ VS Code에서 **파일 → 폴더 열기**로 `wgs-analysis` 디렉토리를 연
 
 변이 검출이 끝나면, Python으로 결과를 분석하고 시각화할 수 있다. 4장에서 배운 pandas와 matplotlib이 여기서 활용된다.
 
+> VCF 파일을 읽어서 변이 유형별(SNP/InDel) 통계와 염색체별 분포를 시각화해줘
+
+이 프롬프트에 대해 Claude Code가 생성하는 코드는 다음과 같다:
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -97,8 +101,6 @@ plt.ylabel("변이 수")
 plt.tight_layout()
 plt.savefig("variants_per_chromosome.png")
 ```
-
-> "VCF 파일을 읽어서 변이 유형별(SNP/InDel) 통계와 염색체별 분포를 시각화해줘"
 
 이처럼 AI에게 요청하면 코드를 직접 작성하지 않아도 분석과 시각화를 수행할 수 있다.
 
@@ -155,6 +157,8 @@ h5ad는 단일세포 데이터의 **표준 저장 형식**이다. HDF5 기반으
 
 최근에는 하나의 세포에서 RNA와 단백질(CITE-seq), 또는 RNA와 염색질 접근성(10x Multiome)을 동시에 측정하는 **멀티오믹스** 기술이 발전하고 있다. h5mu는 이런 멀티오믹스 데이터를 저장하는 형식이다.
 
+> multiome.h5mu 파일을 읽고, RNA와 ATAC 데이터를 각각 분리해줘
+
 ```python
 import mudata as md
 
@@ -182,6 +186,8 @@ atac = mdata.mod["atac"]  # ATAC 데이터 (AnnData)
 - **유전자 수(n_genes_by_counts)**: 한 세포에서 검출된 유전자가 너무 적으면(예: 200개 미만) 품질이 낮은 세포일 가능성이 높다
 - **미토콘드리아 유전자 비율(pct_counts_mt)**: 미토콘드리아 유전자의 비율이 높으면(예: 20% 이상) 세포가 손상되었을 가능성이 있다. 죽어가는 세포에서 세포질 RNA는 빠져나가지만 미토콘드리아 RNA는 남아 있기 때문이다
 
+> 미토콘드리아 유전자 비율을 계산하고, QC 지표들을 바이올린 플롯으로 시각화해줘
+
 ```python
 # 미토콘드리아 유전자 비율 계산
 adata.var["mt"] = adata.var_names.str.startswith("MT-")
@@ -201,6 +207,8 @@ sc.pl.violin(adata, ["n_genes_by_counts", "total_counts", "pct_counts_mt"])
 
 2,000개의 유전자를 사용한다면 각 세포는 2,000차원 공간의 한 점이다. PCA로 50차원으로 압축한 뒤, UMAP으로 2차원 시각화를 수행한다. 이후 Leiden 알고리즘으로 유사한 세포들을 클러스터로 묶는다.
 
+> Leiden 클러스터링을 resolution 0.5로 수행하고, UMAP에 클러스터를 색상으로 표시해줘
+
 ```python
 sc.tl.leiden(adata, resolution=0.5)
 sc.pl.umap(adata, color="leiden")
@@ -211,6 +219,8 @@ sc.pl.umap(adata, color="leiden")
 **세포 유형 주석**
 
 각 클러스터에서 특이적으로 높게 발현되는 **마커 유전자**를 확인하고, 이를 바탕으로 세포 유형을 결정한다.
+
+> 클러스터별 마커 유전자를 찾고, CD3E, CD14, MS4A1, NKG7 발현을 UMAP에 표시해줘
 
 ```python
 sc.tl.rank_genes_groups(adata, groupby="leiden")

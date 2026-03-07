@@ -88,7 +88,7 @@ SvelteKit은 JavaScript/TypeScript 기반이므로 Node.js가 필요하다. Node
 
 https://nodejs.org/en/download
 
-설치 시 **nvm**(Node Version Manager)과 **pnpm**(패키지 매니저)을 선택한 후 터미널에 표시되는 명령을 입력한다. nvm은 여러 버전의 Node.js를 설치하고 전환할 수 있게 해주는 도구이다. 프로젝트마다 다른 Node.js 버전이 필요할 수 있으므로, 직접 설치보다 nvm을 통한 설치가 권장된다.
+설치 시 운영체제를 선택하는 화면이 나오는데, **Windows 사용자도 WSL 환경에서 개발하므로 Linux를 선택**해야 한다. 그다음 **nvm**(Node Version Manager)과 **pnpm**(패키지 매니저)을 선택한 후 터미널에 표시되는 명령을 입력한다. nvm은 여러 버전의 Node.js를 설치하고 전환할 수 있게 해주는 도구이다. 프로젝트마다 다른 Node.js 버전이 필요할 수 있으므로, 직접 설치보다 nvm을 통한 설치가 권장된다.
 
 pnpm은 npm의 대안으로, 디스크 공간을 절약하고 설치 속도가 빠르다. 여러 프로젝트에서 같은 패키지를 사용할 때, pnpm은 패키지를 한 번만 다운로드하고 심볼릭 링크로 연결한다.
 
