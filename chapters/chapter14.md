@@ -91,6 +91,8 @@ claude mcp add fetch -s user -- npx -y @anthropic/mcp-server-fetch
 claude mcp add kegg -s project -- uv run kegg_mcp.py
 ```
 
+MCP 서버를 추가한 뒤에는 **Claude Code를 재시작**해야 새 MCP 서버가 인식된다. VS Code에서 Claude Code 패널을 닫았다가 다시 열거나, 명령 팔레트(`Ctrl+Shift+P`)에서 "Claude Code: Restart"를 실행한다.
+
 ### 알림 시스템 설정
 
 AI 팀원이 작업 중 주요 진행 상황을 Slack, Discord, 또는 Zulip 채널에 자동으로 보고하도록 설정한다. 이를 통해 연구자는 분석이 진행되는 동안 다른 작업을 하다가도 중요한 업데이트를 놓치지 않을 수 있다.
