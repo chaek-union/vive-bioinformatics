@@ -1,4 +1,4 @@
-# 14장. 실전 AI Co-scientist 만들기
+# 14장. AI Co-scientist와 함께 분석하기
 
 ## 14.1 AI 시대의 과학적 발견
 

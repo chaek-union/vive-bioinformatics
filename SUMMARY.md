@@ -27,4 +27,4 @@
 * [11장. MCP와 Claude for Life Sciences](chapters/chapter11.md)
 * [12장. Co-scientist 에이전트 설계](chapters/chapter12.md)
 * [13장. AI로 논문 작성하기](chapters/chapter13.md)
-* [14장. 실전 AI Co-scientist 만들기](chapters/chapter14.md)
+* [14장. AI Co-scientist와 함께 분석하기](chapters/chapter14.md)
