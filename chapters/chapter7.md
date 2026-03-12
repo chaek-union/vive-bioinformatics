@@ -109,19 +109,29 @@ pnpm --version
 
 ```bash
 npx sv create my-bioinfo-app
-cd my-bioinfo-app
-pnpm install
 ```
+
+CLI가 대화형으로 옵션을 물어본다. 다음과 같이 선택한다:
+
+| 질문 | 선택 |
+|------|------|
+| Which template would you like? | **SvelteKit minimal** |
+| Add type checking with TypeScript? | **Yes, using TypeScript syntax** |
+| What would you like to add to your project? | **tailwindcss, sveltekit-adapter, paraglide** |
+| tailwindcss: Which plugins? | **typography, forms** |
+| sveltekit-adapter: Which adapter? | **node** |
+| paraglide: Which languages? | **en, ko** |
+| paraglide: Include a demo? | **No** |
+| Which package manager? | **pnpm** |
 
 프로젝트 생성이 완료되면, VS Code에서 **파일 → 폴더 열기**로 `my-bioinfo-app` 디렉토리를 연다.
 
-프로젝트 생성 시 다음 옵션을 선택한다:
+각 옵션의 역할을 간단히 정리하면:
 
-- Template: **Skeleton project**
-- Type checking: **Yes, using TypeScript syntax**
-- Additional options: 방향키와 스페이스바로 선택 가능. **Tailwind CSS**, **Typography**, **Forms**를 선택할 것
-
-TypeScript는 JavaScript에 타입 시스템을 추가한 언어이다. 변수나 함수의 타입을 명시하면 에러를 미리 방지할 수 있다. AI가 생성하는 코드에서도 타입이 있으면 잘못된 데이터 사용을 컴파일 시점에 잡아낼 수 있으므로, TypeScript를 사용하는 것이 좋다.
+- **TypeScript**: JavaScript에 타입 시스템을 추가한 언어. AI가 생성하는 코드에서도 타입이 있으면 잘못된 데이터 사용을 컴파일 시점에 잡아낼 수 있다.
+- **Tailwind CSS**: 유틸리티 클래스 기반 CSS 프레임워크. Typography 플러그인은 마크다운 렌더링 시 보기 좋은 기본 스타일을, Forms 플러그인은 폼 요소에 기본 스타일을 적용한다.
+- **sveltekit-adapter (node)**: SvelteKit 앱을 Node.js 서버로 배포할 수 있게 해주는 어댑터.
+- **Paraglide**: 다국어(i18n) 지원 라이브러리. 영어(en)와 한국어(ko)를 지원하도록 설정한다.
 
 > **참고**: 프로젝트 초기 생성은 AI 에이전트에 맡기기보다 직접 수행하는 것이 좋다. AI는 초기화 명령을 사용하기보다 기존 코드를 직접 작성하려는 경향이 있어, 최신 버전이 아닌 코드를 생성할 수 있다. 프로젝트 뼈대를 공식 CLI로 먼저 만들고, 그 위에서 AI에게 기능 추가를 요청하는 것이 안전하다.
 
