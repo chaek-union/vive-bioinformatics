@@ -108,7 +108,7 @@ pnpm --version
 터미널에서 다음 명령을 실행하여 SvelteKit 프로젝트를 생성한다:
 
 ```bash
-pnpm create svelte@latest my-bioinfo-app
+npx sv create my-bioinfo-app
 cd my-bioinfo-app
 pnpm install
 ```
