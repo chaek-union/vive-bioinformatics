@@ -3,7 +3,7 @@
 **저자**: 박정빈
 
 <p align="center">
-  <img src="assets/cover.png" alt="Vive Bioinformatics Book Cover" width="300" />
+  <img src="assets/cover.png" alt="Vibe Bioinformatics Book Cover" width="300" />
 </p>
 
 ## 이 책에 대하여
