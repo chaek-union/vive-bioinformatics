@@ -82,13 +82,52 @@ git config --global user.email "hong@example.com"
 
 이메일은 GitHub 계정에 등록된 이메일과 동일하게 설정하는 것이 좋다. GitHub에서 커밋 기록이 본인의 프로필과 연결되기 때문이다.
 
-## 2.4 GitHub MCP 서버 설치
+## 2.4 GitHub CLI (gh) 설치 및 설정
 
-Claude Code가 저장소 생성, Pull Request, Issue 관리 등 GitHub 관련 작업을 수행하려면 **GitHub MCP 서버**를 설치해야 한다. MCP(Model Context Protocol)에 대한 자세한 설명은 11장에서 다루지만, 여기서는 Claude Code에 GitHub 기능을 연결하는 설정만 진행한다.
+**GitHub CLI(`gh`)**는 터미널에서 GitHub의 기능을 사용할 수 있게 해주는 도구이다. Claude Code가 저장소 생성, Pull Request, Issue 관리 등 GitHub 관련 작업을 수행할 때 내부적으로 `gh`를 사용하므로, 반드시 설치하고 인증을 완료해야 한다.
 
-Claude Code 채팅창에 `/plugin`을 입력하면 설치 가능한 공식 플러그인 목록이 나타난다. 여기서 **GitHub**을 선택하면 자동으로 설치된다.
+**Linux / WSL (Ubuntu)**
 
-설치가 완료되면 Claude Code를 재시작한다. 이후 저장소 생성, PR 관리, Issue 조회 등을 자연어로 요청할 수 있다.
+```bash
+sudo apt update && sudo apt install gh
+```
+
+**macOS**
+
+```bash
+brew install gh
+```
+
+> `brew`는 macOS의 패키지 관리자이다. 설치되어 있지 않다면 https://brew.sh 에서 설치할 수 있다.
+
+설치 확인:
+
+```bash
+gh --version
+```
+
+**GitHub 인증**
+
+`gh`를 설치한 후, GitHub 계정과 연결하는 인증 과정이 필요하다.
+
+```bash
+gh auth login
+```
+
+이 명령을 실행하면 대화형으로 인증 방식을 선택하게 된다. 다음과 같이 진행한다:
+
+1. **"Where do you use GitHub?"** → `GitHub.com` 선택
+2. **"What is your preferred protocol for Git operations on this host?"** → `HTTPS` 선택
+3. **"Authenticate Git with your GitHub credentials?"** → `Yes` 선택
+4. **"How would you like to authenticate GitHub CLI?"** → `Login with a web browser` 선택
+5. 화면에 표시된 **one-time code**를 복사하고 Enter를 누른다
+6. 자동으로 열리는 브라우저에서 코드를 붙여넣고 인증을 완료한다
+
+인증이 완료되면 다음 명령으로 확인할 수 있다:
+
+```bash
+gh auth status
+```
 
 ## 2.5 GitHub에 저장소 만들기
 
@@ -96,7 +135,15 @@ Claude Code에게 요청하면 저장소 생성부터 로컬 Clone까지 한 번
 
 > my-analysis라는 이름의 공개 GitHub 저장소를 만들고 클론해줘
 
-Claude Code가 GitHub MCP 서버를 통해 저장소를 생성하고, 로컬에 Clone까지 완료해 준다.
+Claude Code가 내부적으로 `gh repo create` 명령을 실행하여 GitHub에 저장소를 생성하고, 로컬에 Clone까지 완료해 준다.
+
+직접 터미널에서 만들 수도 있다:
+
+```bash
+gh repo create my-analysis --public --clone
+```
+
+이 명령은 GitHub에 `my-analysis`라는 공개 저장소를 만들고, 자동으로 로컬에 Clone까지 해준다. 비공개 저장소를 만들려면 `--public` 대신 `--private`을 사용한다.
 
 GitHub 웹사이트에서도 저장소를 만들 수 있다:
 
@@ -133,7 +180,13 @@ README 파일의 확장자 `.md`는 **마크다운(Markdown)**을 의미한다. 
 
 마크다운은 일반 텍스트로 작성하면서도 구조적인 문서를 만들 수 있어, 프로그래머들 사이에서 문서 작성의 사실상 표준이 되었다. 자세한 문법은 외울 필요 없이, 필요할 때 Claude Code에게 물어보면 된다.
 
-웹에서 저장소를 만든 경우, Claude Code에게 요청하여 로컬에 Clone한다:
+웹에서 저장소를 만든 경우, 로컬에 Clone하여 작업을 시작한다:
+
+```bash
+gh repo clone 사용자명/my-analysis
+```
+
+또는 Claude Code에게 요청할 수도 있다:
 
 > https://github.com/사용자명/my-analysis 이 저장소를 클론해줘
 
