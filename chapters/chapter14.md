@@ -83,6 +83,8 @@ Docker 환경이 준비되면 분석을 컨테이너 안에서 실행할 수 있
 
 > 이 프로젝트의 CLAUDE.md를 작성해줘. 연구 주제는 비소세포폐암(NSCLC) 종양 미세환경의 면역세포 구성 분석이야. 10x Genomics scRNA-seq 데이터를 사용하고, Scanpy와 AnnData로 분석해. 분석 파이프라인은 QC → 정규화 → 배치 보정 → 클러스터링 → 세포 유형 주석 → 차등 발현 분석 순서야. figure는 300 dpi로 저장하고, 결과 파일은 h5ad 형식으로 저장해.
 
+CLAUDE.md는 사용자가 직접 작성하는 명시적 메모리다. 이와 별도로, Claude Code는 작업 중 발견한 패턴이나 프로젝트 특성을 MEMORY.md에 자동으로 기록한다. 예를 들어 분석 과정에서 "이 데이터셋은 배치 효과가 크다"는 사실을 발견하면 MEMORY.md에 남기고, 다음 대화에서 자동으로 참조한다. 사용자가 별도로 관리할 필요 없다.
+
 ### MCP 서버 연결
 
 11장에서 배운 MCP 서버를 프로젝트에 연결한다:
@@ -90,7 +92,6 @@ Docker 환경이 준비되면 분석을 컨테이너 안에서 실행할 수 있
 ```bash
 claude mcp add --transport http --scope user biorxiv https://mcp.deepsense.ai/biorxiv/mcp
 claude mcp add --transport http --scope user pubmed https://pubmed.mcp.claude.com/mcp
-claude mcp add --scope user fetch -- npx -y @anthropic/mcp-server-fetch
 ```
 
 12장에서 만든 KEGG MCP 서버가 있다면 함께 등록한다:
